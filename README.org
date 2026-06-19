@@ -1,0 +1,2 @@
+* =emacs.d=: My =emacs= initialization file
+Changes are best made in =settings.org=.

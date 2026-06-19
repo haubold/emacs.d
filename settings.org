@@ -1,0 +1,85 @@
+* Emacs Settings
+** Text Mode
+Make it default.
+#+begin_src emacs-lisp
+  (setq-default major-mode 'text-mode)
+#+end_src
+Switch on auto-fill.
+#+begin_src emacs-lisp
+  (add-hook 'text-mode-hook 'turn-on-auto-fill)
+#+end_src
+Type umlauts.
+#+begin_src emacs-lisp
+  (add-hook 'text-mode-hook
+	    (lambda () (set-input-method "latin-1-prefix")))
+#+end_src
+Start on the fly spell checking.
+#+begin_src emacs-lisp
+  (dolist (hook '(text-mode-hook))
+    (add-hook hook (lambda () (flyspell-mode 1))))
+#+end_src
+** Org Mode
+Enable structure templates.
+#+begin_src emacs-lisp
+  (require 'org-tempo)
+#+end_src
+Template for Go.
+#+begin_src emacs-lisp
+  (tempo-define-template "Go"
+	     '("#+begin_src go <<" p ">>=" n 
+	       "#+end_src")
+	     "<sg"
+	     "Insert Go code" ; documentation
+	     'org-tempo-tags)
+#+end_src
+Template for Bash.
+#+begin_src emacs-lisp
+  (tempo-define-template "Bash"
+			 '("#+begin_src bash <<" p ">>=" n 
+			   "#+end_src")
+			 "<sb"
+			 'org-tempo-tags)
+#+end_src
+Template for Sql.
+#+begin_src emacs-lisp
+  (tempo-define-template "Sql"
+			 '("#+begin_src sql <<" p ">>=" n 
+			   "#+end_src")
+			 "<ss"
+			 'org-tempo-tags)
+#+end_src
+Template for Awk.
+#+begin_src emacs-lisp
+  (tempo-define-template "Awk"
+			 '("#+begin_src awk <<" p ">>=" n 
+			   "#+end_src")
+			 "<sa"
+			 'org-tempo-tags)
+#+end_src
+Template for Python.
+#+begin_src emacs-lisp
+  (tempo-define-template "Python"
+			 '("#+begin_src python <<" p ">>=" n 
+			   "#+end_src")
+			 "<sp"
+			 'org-tempo-tags)
+#+end_src
+Enable execution of Bash and Awk snippets.
+#+begin_src emacs-lisp
+  (org-babel-do-load-languages
+   'org-babel-load-languages
+   '((shell . t)
+     (awk .t)))
+#+end_src
+** Calendar
+Write dates the European way, DD/MM/YYYY.
+#+begin_src emacs-lisp
+  (add-hook 'calendar-load-hook
+	    (lambda ()
+	      (calendar-set-date-style 'european)))
+#+end_src
+Make Monday the first day of the week.
+#+begin_src emacs-lisp
+  (setq calendar-week-start-day 1)
+#+end_src
+
