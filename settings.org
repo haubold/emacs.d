@@ -18,6 +18,7 @@ Start on the fly spell checking.
   (dolist (hook '(text-mode-hook))
     (add-hook hook (lambda () (flyspell-mode 1))))
 #+end_src
+
 ** Org Mode
 Enable structure templates.
 #+begin_src emacs-lisp
@@ -71,6 +72,7 @@ Enable execution of Bash and Awk snippets.
    '((shell . t)
      (awk .t)))
 #+end_src
+
 ** Calendar
 Write dates the European way, DD/MM/YYYY.
 #+begin_src emacs-lisp
@@ -83,3 +85,8 @@ Make Monday the first day of the week.
   (setq calendar-week-start-day 1)
 #+end_src
 
+** Git
+Format git commit messages
+#+begin_src emacs-lisp
+(require 'magit)
+#+end_src
