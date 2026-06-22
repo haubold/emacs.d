@@ -27,7 +27,7 @@ Enable structure templates.
 Template for Go.
 #+begin_src emacs-lisp
   (tempo-define-template "Go"
-	     '("#+begin_src go <<" p ">>=" n 
+	     '("#+begin_src go" p n 
 	       "#+end_src")
 	     "<sg"
 	     "Insert Go code" ; documentation
@@ -36,7 +36,7 @@ Template for Go.
 Template for Bash.
 #+begin_src emacs-lisp
   (tempo-define-template "Bash"
-			 '("#+begin_src bash <<" p ">>=" n 
+			 '("#+begin_src bash" p n 
 			   "#+end_src")
 			 "<sb"
 			 'org-tempo-tags)
@@ -44,7 +44,7 @@ Template for Bash.
 Template for Sql.
 #+begin_src emacs-lisp
   (tempo-define-template "Sql"
-			 '("#+begin_src sql <<" p ">>=" n 
+			 '("#+begin_src sql" p n 
 			   "#+end_src")
 			 "<ss"
 			 'org-tempo-tags)
@@ -52,7 +52,7 @@ Template for Sql.
 Template for Awk.
 #+begin_src emacs-lisp
   (tempo-define-template "Awk"
-			 '("#+begin_src awk <<" p ">>=" n 
+			 '("#+begin_src awk" p n 
 			   "#+end_src")
 			 "<sa"
 			 'org-tempo-tags)
@@ -60,7 +60,7 @@ Template for Awk.
 Template for Python.
 #+begin_src emacs-lisp
   (tempo-define-template "Python"
-			 '("#+begin_src python <<" p ">>=" n 
+			 '("#+begin_src python" p n 
 			   "#+end_src")
 			 "<sp"
 			 'org-tempo-tags)
@@ -86,7 +86,7 @@ Make Monday the first day of the week.
 #+end_src
 
 ** Git
-Format git commit messages
+Format git commit messages.
 #+begin_src emacs-lisp
 (require 'magit)
 #+end_src

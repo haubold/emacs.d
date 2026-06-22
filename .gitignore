@@ -1,11 +1,4 @@
-*~
-.org-id-locations
-adwaita-theme.el
-auto-save-list
-eln-cache
-elpa
-eshell
-old*
-settings.el
-transient
-tutorial
+*
+!init.el
+!settings.org
+!README.org
