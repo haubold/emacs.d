@@ -2,10 +2,21 @@
 - Changes are best made in =settings.org=.
 - A neat way to avoid the start up of ordinary =emacs= is to run an
   =emacs= server
-#+begin_src sh
+#+begin_src bash
   emacs --daemon
 #+end_src
 Then a client can quickly connect to the server.
-#+begin_src sh
+#+begin_src bash
   emacsclient -nw
+#+end_src
+To make =emacsclient= the default method for interacting with =emacs=,
+I added an alias to =.bashrc=.
+#+begin_src bash
+  alias emacs='emacsclient -nw'
+#+end_src
+Note that whenever the configuration of =emacs= is changed, the server
+needs to be restarted rather than the client. To conveniently
+(re)start =emacs=, I added another alias to =.bashrc=
+#+begin_src bash
+  alias startEmacs='emacsclient -e "(kill-emacs)"; /usr/bin/emacs --daemon'
 #+end_src
