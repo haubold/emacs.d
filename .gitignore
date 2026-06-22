@@ -1,8 +1,3 @@
-*~
-.org-id-locations
-auto-save-list
-eln-cache
-elpa
-old*
-tutorial
-settings.el
+*
+!init.el
+!settings.org
