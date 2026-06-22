@@ -1,4 +1,9 @@
 * Emacs Settings
+** General appearance
+No menu bar.
+#+begin_src emacs-lisp
+  (menu-bar-mode -1)
+#+end_src
 ** Text Mode
 Make it default.
 #+begin_src emacs-lisp
@@ -65,6 +70,14 @@ Template for Python.
 			 "<sp"
 			 'org-tempo-tags)
 #+end_src
+Template for Emacs-Lisp.
+#+begin_src emacs-lisp
+  (tempo-define-template "Emacs-Lisp"
+			 '("#+begin_src emacs-lisp" p n 
+			   "#+end_src")
+			 "<se"
+			 'org-tempo-tags)
+#+end_src
 Enable execution of Bash and Awk snippets.
 #+begin_src emacs-lisp
   (org-babel-do-load-languages
@@ -90,3 +103,5 @@ Format git commit messages.
 #+begin_src emacs-lisp
 (require 'magit)
 #+end_src
+This requires =magit= to be installed, which is best done using
+=package-install= from within =emacs=.

@@ -1,2 +1,11 @@
 * =emacs.d=: My =emacs= initialization file
-Changes are best made in =settings.org=.
+- Changes are best made in =settings.org=.
+- A neat way to avoid the start up of ordinary =emacs= is to run an
+  =emacs= server
+#+begin_src sh
+  emacs --daemon
+#+end_src
+Then a client can quickly connect to the server.
+#+begin_src sh
+  emacsclient -nw
+#+end_src
